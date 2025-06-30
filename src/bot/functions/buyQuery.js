@@ -234,7 +234,7 @@ https://t.me/techBozor_Official
             } else if (step === "lap_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].images);
+                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {
@@ -332,7 +332,7 @@ https://t.me/techBozor_Official
             } else if (step === "hardware_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].images);
+                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {
@@ -429,7 +429,7 @@ https://t.me/techBozor_Official
             }else if (step === "other_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].images);
+                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {
