@@ -702,7 +702,7 @@ https://t.me/techBozor_Official
                         }
                     });
 
-                    userDevices[chatId].step = "_confirm";
+                    userDevices[chatId].step = "other_confirm";
                 } catch (error) {
                     console.error("Rasm yuborishda xatolik:", error);
                 }
