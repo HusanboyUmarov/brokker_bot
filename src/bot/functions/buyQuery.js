@@ -201,7 +201,7 @@ https://t.me/techBozor_Official
                 bot.sendMessage(chatId, "📍 Yashash joyingizni kiriting (masalan, Farg‘ona)");
             } else if (step === "lap_location") {
                 userDevices[chatId].lap_location = text;
-                userDevices[chatId].step = "lap_confirm";
+
                 userDevices[chatId].location = text;
                 userDevices[chatId].caption = `💸Sotib olinadi
 
@@ -214,7 +214,7 @@ https://t.me/techBozor_Official
 🇺🇿 Telegram: @${msg.from.username} 
 📃 Qoshimcha: ${userDevices[chatId].lap_qoshimcha}       
                 
-    #buy #${userDevices[chatId].brend}`;
+    #buy #${userDevices[chatId].lap_brend}`;
 
                 await bot.sendMessage(chatId,  userDevices[chatId].caption);
                 await bot.sendMessage(chatId, "📢 E'loningizni tasdiqlang yoki bekor qiling:", {
@@ -234,7 +234,7 @@ https://t.me/techBozor_Official
             } else if (step === "lap_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
+                    const adminMessage = await bot.sendMessage(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {
@@ -332,7 +332,7 @@ https://t.me/techBozor_Official
             } else if (step === "hardware_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
+                    const adminMessage = await bot.sendMessage(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {
@@ -429,7 +429,7 @@ https://t.me/techBozor_Official
             }else if (step === "other_confirm") {
                 if (text === "✅ Tasdiqlash") {
                     // USER tasdiqlasa, ADMINLAR guruhiga yuboramiz
-                    const adminMessage = await bot.sendMediaGroup(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
+                    const adminMessage = await bot.sendMessage(process.env.ADMIN_GROUP_ID, userDevices[chatId].caption);
 
                     // Keyin adminlarga alohida tasdiqlash uchun tugmalar yuboramiz
                     const adminMsg = await bot.sendMessage(process.env.ADMIN_GROUP_ID, "🆕 Yangi e'lon! Tasdiqlaysizmi?", {

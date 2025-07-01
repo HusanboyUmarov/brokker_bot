@@ -12,7 +12,7 @@ const sellQuery = (bot) => {
         
         try {
             const result = await checkChannelSubscribe(bot, chatId)
-            console.log(result)
+
             if(!result){
                return bot.sendMessage(chatId, `Iltimos botdan to'liq foydalanish uchun kanalga a'zo bo'ling:
 https://t.me/techBozor_Official
