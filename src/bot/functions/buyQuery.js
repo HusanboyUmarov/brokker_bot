@@ -40,7 +40,12 @@ https://t.me/techBozor_Official
 
             if (userDevices[userId]) {
                 await bot.sendMessage(adminChatId, "❌ E'lon bekor qilindi.");
-                await bot.sendMessage(userId, "❌ E'loningiz admin tomonidan rad etildi.");
+                await bot.sendMessage(userId, `❌ E'lon bekor qilindi.
+🔑E'loningiz chiqishi uchun quydagilarga etibor bering:
+✅ Imlo xatolardan qoching,
+✅ Imkon qadar barcha ma'lumotlarni to'ldiring
+
+                Yangi e'lon yaratish uchun /start buyrug‘ini bosing.`);
                 delete userDevices[userId];
             }
         }
@@ -114,7 +119,7 @@ https://t.me/techBozor_Official
 💰 Summa: ${userDevices[chatId].sum} 
 📍 Manzil: ${userDevices[chatId].location} 
 📞 Aloqa: ${userDevices[chatId].phone} 
-🇺🇿 Telegram: @${msg.from.username} 
+🇺🇿 Telegram: ${msg.from?.username ? "@"+msg.from.username : "mavjud emas" }
 📃 Qoshimcha: ${userDevices[chatId].qoshimcha}
                 
     #buy #${userDevices[chatId].brend}`;
@@ -211,7 +216,7 @@ https://t.me/techBozor_Official
 💰 Summa: ${userDevices[chatId].lap_sum} 
 📍 Manzil: ${userDevices[chatId].lap_location} 
 📞 Aloqa: ${userDevices[chatId].lap_phone} 
-🇺🇿 Telegram: @${msg.from.username} 
+🇺🇿 Telegram: ${msg.from?.username ? "@"+msg.from.username : "mavjud emas" }
 📃 Qoshimcha: ${userDevices[chatId].lap_qoshimcha}       
                 
     #buy #${userDevices[chatId].lap_brend}`;
@@ -312,7 +317,7 @@ https://t.me/techBozor_Official
 💰 Summa: ${userDevices[chatId].hardware_sum} 
 📍 Manzil: ${userDevices[chatId].hardware_location} 
 📞 Aloqa: ${userDevices[chatId].hardware_phone} 
-🇺🇿 Telegram: @${msg.from.username} 
+🇺🇿 Telegram: ${msg.from?.username ? "@"+msg.from.username : "mavjud emas" }
 📃 Qoshimcha: ${userDevices[chatId].hardware_qoshimcha} 
                 
     #sell #${userDevices[chatId].hardware_name}`;
@@ -409,7 +414,7 @@ https://t.me/techBozor_Official
 💰 Summa: ${userDevices[chatId].other_sum} 
 📍 Manzil: ${userDevices[chatId].other_adress} 
 📞 Aloqa: ${userDevices[chatId].other_phone} 
-🇺🇿 Telegram: @${msg.from.username} 
+🇺🇿 Telegram: ${msg.from?.username ? "@"+msg.from.username : "mavjud emas" }
 📃 Qoshimcha: ${userDevices[chatId].other_qoshimcha} 
                     
         #sell #${userDevices[chatId].other_name}`;
